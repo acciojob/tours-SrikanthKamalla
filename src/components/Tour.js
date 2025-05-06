@@ -15,6 +15,7 @@ const Tour = ({ id, name, info, image, price, removeTour }) => {
 
         <br />
         <img src={image} />
+        <h3>{price}</h3>
         <br />
         <button onClick={() => removeTour(id)}>delete</button>
       </p>
