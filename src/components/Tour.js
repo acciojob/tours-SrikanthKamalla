@@ -4,10 +4,10 @@ const Tour = ({ id, name, info, image, price, removeTour }) => {
   const [readMore, setReadMore] = useState(true);
 
   return (
-    <div>
+    <div id="main">
       <h2>{name}</h2>
       <h4>${price}</h4>
-      <p>
+      <p id={`tour-item-para-${id}`}>
         {readMore ? info.slice(0, 200) + "..." : info}
         <br />
         <button onClick={() => setReadMore(!readMore)}>
@@ -18,7 +18,9 @@ const Tour = ({ id, name, info, image, price, removeTour }) => {
         <img src={image} alt={name} />
         <h3>{price}</h3>
         <br />
-        <button onClick={() => removeTour(id)}>Not Interested</button>
+        <button id={`delete-btn-${id}`} onClick={() => removeTour(id)}>
+          Not Interested
+        </button>
       </p>
     </div>
   );
